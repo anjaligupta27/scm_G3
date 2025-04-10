@@ -1,0 +1,18 @@
+name: Welcome New Contributor
+
+on:
+  pull_request_target:
+    types: [opened]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send Welcome Message
+        uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          pr-message: |
+            👋 Hi there! Thanks for your first pull request!
+            We're excited to have your contribution. 🚀
